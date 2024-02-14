@@ -12,6 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
     ageList.appendChild(ageSpan);
   });
 
+  
+  // Wanneer er een span wordt gesleept
+  function drag(event) {
+    // Zet de tekst van het span-element als 'text' in het datatransfer-object
+    event.dataTransfer.setData("text", event.target.textContent);
+  }
+
   // Event listeners toevoegen aan agebox
   ageBox.addEventListener("dragover", allowDrop);
   ageBox.addEventListener("drop", drop);
@@ -61,11 +68,5 @@ document.addEventListener('DOMContentLoaded', () => {
         // Toon foutmelding als er een fout optreedt bij het ophalen of weergeven van resultaten
         console.error('Fout bij het ophalen of weergeven van resultaten:', error);
       });
-  }
-
-  // Wanneer er een span wordt gesleept
-  function drag(event) {
-    // Zet de tekst van het span-element als 'text' in het datatransfer-object
-    event.dataTransfer.setData("text", event.target.textContent);
   }
 });
