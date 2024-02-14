@@ -5,7 +5,18 @@ import express from 'express'
 import fetchJson from './helpers/fetch-json.js'
 
 // Stel het basis endpoint in
-const apiUrl = 'https://fdnd.directus.app/items'
+const apiUrl = await fetchJson('https://fdnd.directus.app/items/person/?filter[custom][_icontains]="leeftijd":51');
+
+if (apiUrl.data.length > 0) {
+
+  apiUrl.data.forEach(person => {
+    console.log(person);  
+  });
+
+} else {
+  console.log('Helaas die is er niet');
+}
+
 
 // Haal alle squads uit de WHOIS API op
 const squadData = await fetchJson(apiUrl + '/squad')

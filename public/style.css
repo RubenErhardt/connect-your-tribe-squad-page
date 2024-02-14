@@ -1,0 +1,59 @@
+
+*{
+    margin: 0
+}
+
+:root{
+    --header-full:#f1f1f1;
+
+}
+
+/*Header met navbar*/
+.header-full{
+    background-color: var(--header-full);
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 15px; 
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+#ageList {
+    display: flex;
+  }
+  
+  span {
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    cursor: move;
+  }
+  
+  #ageBox {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px dashed #ddd;
+    cursor: copy;
+  }
