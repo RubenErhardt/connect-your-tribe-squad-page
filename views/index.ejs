@@ -24,12 +24,30 @@
   <div id="ageList">
   </div>
 
+  <div class="informatie-machine">
   <div id="ageBox" ondrop="drop(event)" ondragover="allowDrop(event)">
     Drop hier de leeftijd die jij wilt weten!
   </div>
 
   <div id="infobox">
   </div>
+</div>
+
+<h2>Huidige berichten</h2>
+<ul>
+  <% messages.forEach(message =>{ %>
+      <li><%= message %></li>
+  <% }) %>
+</ul>
+
+
+<form method="POST" action="/">
+  <label>
+    berichtje:
+    <textarea required name="bericht" cols="30" rows="10"></textarea>
+  </label>
+  <button type="submit">Verstuur berichtje</button>
+</form>
 
 </main>
 

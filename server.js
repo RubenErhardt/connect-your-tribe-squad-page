@@ -23,7 +23,10 @@ const squadData = await fetchJson(apiUrl + '/squad')
 
 // Maak een nieuwe express app aan
 const app = express()
+app.use(express.urlencoded({extended: true}))
 
+
+const messages = []	
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
 
@@ -41,13 +44,15 @@ app.get('/', function (request, response) {
     // Je zou dat hier kunnen filteren, sorteren, of zelfs aanpassen, voordat je het doorgeeft aan de view
 
     // Render index.ejs uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
-    response.render('index', {persons: apiData.data, squads: squadData.data})
+    response.render('index', {persons: apiData.data, squads: squadData.data, messages: messages})
   })
 })
 
+
+
 // Maak een POST route voor de index
-app.post('/', function (request, response) {
-  // Er is nog geen afhandeling van POST, redirect naar GET op /
+app.post('/', function (request,response) {
+  messages.push(request.body.bericht)
   response.redirect(303, '/')
 })
 
@@ -68,3 +73,5 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+

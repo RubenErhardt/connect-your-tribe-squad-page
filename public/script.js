@@ -4,13 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const infobox = document.getElementById("infobox"); // Referentie naar infobox element
 
   // aanmaken van leeftijd spans
-  ['18', '19', '20', '21', '22', '51'].forEach(ageValue => {
+  for (let ageValue = 18; ageValue <= 60; ageValue++) {
     const ageSpan = document.createElement("span");
     ageSpan.draggable = true;
-    ageSpan.textContent = ageValue;
+    ageSpan.textContent = ageValue.toString();
     ageSpan.addEventListener("dragstart", drag);
     ageList.appendChild(ageSpan);
-  });
+} 
 
   
   // Wanneer er een span wordt gesleept

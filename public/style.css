@@ -56,4 +56,46 @@ nav a {
     padding: 20px;
     border: 2px dashed #ddd;
     cursor: copy;
+    width: 200px;
+    height: 200px;
+  }
+
+  #ageList{
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .age-machine-information{
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+  }
+
+  .age-machine-information h1 {
+    color: #333;
+    
+  }
+
+  #ageBox {
+    border: 2px dashed #333;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+  }
+
+  #infobox {
+    margin-top: 20px;
+    max-width: 300px;
+  }
+
+  .informatie-machine{
+    display: flex;
+    margin: 20px;
+    gap: 100px;
   }
