@@ -1,3 +1,22 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Root color variables */
+:root {
+  --main: #FFFFFF;
+  --secondary: #26C1F6;
+  --accent: #ff2f2fb4;
+  --greyone: #f9f9f9;
+  --dark: #000;
+  --width: 0;
+  --main-color: #234099;
+  --links-color-mobile: #fff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 /* Reset styles */
 * {
   box-sizing: border-box;
@@ -8,8 +27,8 @@
 /* Body styles */
 body {
   font-family: "Open Sans", sans-serif;
-  background: linear-gradient(to bottom, #3498db, #ffffff);
-  color: #333;
+  background: linear-gradient(to bottom, var(--secondary), var(--main));
+  color: var(--dark);
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -44,15 +63,14 @@ main {
 span {
   margin: 5px;
   padding: 10px;
-  border: 1px solid #3498db;
+  border: 1px solid var(--main-color);
   cursor: grab;
- }
+}
 
- span:hover {
+span:hover {
   transform: scale(1.02);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Age list styles */
 #ageList {
@@ -62,20 +80,43 @@ span {
   max-width: 800px;
   margin: 0 auto;
   font-size: 0.9em;
+  margin-top: 50px;
 }
 
-
 /* Age box styles */
+@keyframes shake {
+  0% { transform: translate(-50%, -50%) rotate(0deg); top: 75%; }
+  25% { transform: translate(-52%, -52%) rotate(-2deg); top: 75%; }
+  50% { transform: translate(-50%, -50%) rotate(0deg); top: 75%; }
+  75% { transform: translate(-48%, -48%) rotate(2deg); top: 75%; }
+  100% { transform: translate(-50%, -50%) rotate(0deg); top: 75%; }
+}
+
 #ageBox {
   width: 300px;
   height: 200px;
-  top: 80%; /* Adjusted top value */
-  border: 2px solid #3498db;
+  border: 2px solid var(--main-color);
   border-radius: 10px;
-  position: relative;
-  background: linear-gradient(to bottom, #3498db, #2980b9);
-  margin: 2rem auto;
+  position: absolute;
+  top: 10px; /* Adjust top position accordingly */
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--secondary);
   box-shadow: 0 8px 16px rgba(52, 152, 219, 0.3);
+  animation: shake 2s infinite;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#ageBox:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 80px;
+  height: 10px;
+  background: #333;
+  transform: translateX(-50%);
 }
 
 #ageBox p {
@@ -86,27 +127,27 @@ span {
   margin: 0;
   font-size: 18px;
   font-weight: bold;
-  color: white;
+  color: var(--main);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  z-index: 1;
 }
 
-
 /* Style for business cards */
-
 .business-card {
-  position: relative; /* Add relative positioning to establish a containing block for absolute positioning */
+  position: relative;
   border: 1px solid #ddd;
-  background-color: #f5f5f5; /* Light gray background */
+  background-color: var(--greyone);
   padding: 15px;
   margin: 10px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
-  width: 350px; /* Fixed width */
+  width: 300px;
   height: 200px;
   display: inline-block;
-  overflow: hidden; /* Ensure content does not overflow */
-  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 0;
 }
 
 .business-card:hover {
@@ -115,34 +156,35 @@ span {
 
 .business-card p,
 .business-card div {
-  margin: 5px 0; /* Adjusted margin */
-  color: #555; /* Slightly darker text color */
-  font-size: 0.9em; /* Adjusted font size */
-  overflow: hidden; /* Hide overflowed content */
+  margin: 5px 0;
+  color: #555;
+  font-size: 0.9em;
+  overflow: hidden;
 }
 
 .business-card button {
-  font-size: 0.8em; /* Adjusted font size */
+  font-size: 0.8em;
 }
 
 .business-card p,
 .business-card div,
 .business-card button {
-  white-space: nowrap; /* Prevent wrapping */
-  text-overflow: ellipsis; /* Add ellipsis for overflowed text */
-  overflow: hidden; /* Hide overflowed content */
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .business-card img {
   max-width: 80px;
   max-height: 80px;
-  margin-bottom: 5px; /* Adjusted margin */
+  margin-bottom: 5px;
   position: absolute;
-  top: 10px; /* Adjusted top value */
-  right: 10px; /* Adjusted right value */
+  top: 10px;
+  right: 10px;
 }
 
 #infobox {
+  margin-top: 260px; /* Adjust margin-top to leave space for ageBox */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
