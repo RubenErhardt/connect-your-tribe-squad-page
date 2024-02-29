@@ -49,12 +49,24 @@ main {
 .age-machine-information h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--main);
 }
-
 .age-machine-information h2 {
   font-size: 1.2em;
   margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Adjust values as needed */
 }
+
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
+}
+
 
 span {
   margin: 5px;
@@ -102,10 +114,6 @@ span:hover {
   overflow: hidden;
   z-index: 1;
   margin-top: -50px;
-}
-#ageBox:hover {
-  transform: translateX(-50%) rotateX(30deg) scale(1.05);
-  box-shadow: 0 12px 20px rgba(52, 152, 219, 0.5), 0 0 30px rgba(52, 152, 219, 0.7) inset;
 }
 
 #ageBox p {
@@ -228,3 +236,66 @@ span:hover {
 .clearLikesDislikes:active {
   transform: scale(0.95);
 }
+
+/* Add this to your existing CSS or create a new style block */
+@keyframes fadeInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromRight {
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#ageList{
+  animation: fadeInFromRight 1s ease-in-out;
+}
+.age-machine-information h1 {
+  animation: fadeInFromTop 1s ease-out; /* Adjust duration and timing function as needed */
+  animation: bounce 1s infinite alternate; /* Create a bounce effect, adjust as needed */
+}
+
+.age-machine-information h2 {
+  animation: fadeInFromLeft 1s ease-out; /* Adjust duration and timing function as needed */
+}
+
+.clearLikesDislikes{
+  animation: fadeInFromBottom 1s ease-in-out;
+}
+
+
