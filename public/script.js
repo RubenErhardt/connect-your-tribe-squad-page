@@ -103,17 +103,4 @@ document.addEventListener('DOMContentLoaded', () => {
       button.nextElementSibling.nextElementSibling.innerHTML = `Dislikes: ${dislikes[id] || 0}`;
     });
   }
-
-  updateLikesAndDislikes();
-
-  // Functie om likes en dislikes van lokale opslag te verwijderen
-  function clearLocalStorage() {
-    localStorage.removeItem('likes');
-    localStorage.removeItem('dislikes');
-    updateLikesAndDislikes(); // Update de tellers op de pagina
-  }
-
-  // Voeg een event listener toe aan de knop voor het verwijderen van likes en dislikes
-  const clearButton = document.querySelector('button[data-action="clearLikesDislikes"]');
-  clearButton.addEventListener('click', clearLocalStorage);
 });

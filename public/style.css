@@ -211,32 +211,6 @@ span:hover {
   color: red;
 }
 
-.clearLikesDislikes {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  margin-bottom: 20px;
-  border: 2px solid #234099;
-  color: #234099;
-  background-color: #fff;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s, transform 0.3s;
-}
-
-.clearLikesDislikes:hover {
-  background-color: #234099;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-.clearLikesDislikes:active {
-  transform: scale(0.95);
-}
-
 /* Add this to your existing CSS or create a new style block */
 @keyframes fadeInFromTop {
   from {
@@ -292,10 +266,6 @@ span:hover {
 
 .age-machine-information h2 {
   animation: fadeInFromLeft 1s ease-out; /* Adjust duration and timing function as needed */
-}
-
-.clearLikesDislikes{
-  animation: fadeInFromBottom 1s ease-in-out;
 }
 
 
