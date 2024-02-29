@@ -49,7 +49,9 @@ main {
 .age-machine-information h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: var(--main);
+  background: linear-gradient(to right, #000000, #04337e); /* Adjust colors as needed */
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .age-machine-information h2 {
   font-size: 1.2em;
@@ -76,8 +78,10 @@ span {
 }
 
 span:hover {
-  transform: scale(1.02);
+  transform: scale(1.1);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: var(--main);
+  background: #003366FF;
 }
 
 /* Age list styles */
@@ -104,17 +108,19 @@ span:hover {
   width: 300px;
   height: 200px;
   border: 2px solid var(--main-color);
-  border-radius: 20px; /* Increased border radius for a more modern look */
+  border-radius: 20px; 
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(to bottom, #00203FFF, #003366FF); /* Updated background gradient */
+  background: linear-gradient(to bottom, #00203FFF, #003366FF); 
   box-shadow: 0 8px 16px rgba(52, 152, 219, 0.3);
-  animation: shake 2s infinite;
+  animation: shake 4s infinite;
   overflow: hidden;
   z-index: 1;
   margin-top: -50px;
+
 }
+
 
 #ageBox p {
   position: absolute;
